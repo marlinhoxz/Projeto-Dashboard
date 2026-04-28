@@ -1,0 +1,89 @@
+.card {
+    background: linear-gradient(135deg, #3d2010 0%, #1a0e06 60%, #2a1a0a 100%);
+    border-radius: var(--radius-sm);
+    padding: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 160px;
+    border: 1px solid  rgba(249, 115, 22, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover{
+   transform: scale(1.04);
+   box-shadow: 0 0 5px 10px rgba(0, 0, 0, 0.082);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background:radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.balanceLabel {
+    font-size: .70rem;
+    color: var(--text-secondary);
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 500;
+}
+
+.balanceValue {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    font-weight: bold;
+    font-family: var(--font-body);
+    line-height: 1;
+}
+
+.cardNumber {
+    font-size: .95rem;
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+}
+
+.lastFour {
+     color: var(--text-secondary); 
+     font-weight: 600;
+}
+
+.cardFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.expiry {
+    display: flex;
+    flex-direction: column;
+    gap: .12rem;
+}
+
+.expiryLabel {
+    font-size: .75rem;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    letter-spacing: .06rem;
+    font-weight: bold;
+}
+
+.expiry time {
+    font-size: .70rem;
+    font-family: var(--font-body);
+    font-weight: bold;
+}
+
+.networkLogo {
+    opacity: .9;
+}

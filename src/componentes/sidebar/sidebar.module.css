@@ -1,0 +1,136 @@
+.sidebar {
+    width: 300px;
+    min-height: 100vh;
+    
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 1rem;
+}
+
+
+.img {
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 3px var(--accent-muted);
+}
+
+
+.username {
+    font-family: var(--font-display);
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.nav {
+    flex: 1;
+    padding: .6rem;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .125rem;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .7rem .15rem;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    font-weight: 500;
+    transition: all 0.18s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.labelText {
+    color: #fff;
+}
+
+.navItem::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent-muted);
+    opacity: 0;
+    transition: opacity 0.18s ease;
+}
+
+.navItem:hover {
+    color: var(--text-primary)
+}
+
+.navItem:hover::before {
+    opacity: 1;
+}
+
+.navItem.active {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+}
+
+
+.navItem.active:hover::before {
+    opacity: 0;
+}
+
+.navIcon {
+    width: 1.5rem;
+    height: 1.2rem;
+    position: relative;
+}
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: grid;
+    place-items: center;
+    z-index: 10;
+    padding: .13rem;
+    backdrop-filter: blur(20px);
+}
+
+
+.modal {
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    border-radius: var(--radius-sm);
+    padding: 1.125rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.modalTitulo {
+    font-size: 1.1rem;
+    margin-bottom: .8rem;
+    color: var(--text-primary);
+}
+
+.modalTexto {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.modalBotao {
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--accent);
+    color: #fff;
+    padding: .6rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+}

@@ -1,0 +1,75 @@
+{
+  "cartao": {
+    "saldo": 22000,
+    "ultimosQuatroDigitos": "1234",
+    "vencimento": "12/22",
+    "bandeira": "mastercard"
+  },
+  "transacoes": [
+    {
+      "id": "1",
+      "nome": "Gerald Argungu",
+      "data": "21/12/21",
+      "valor": 22000,
+      "tipo": "debito",
+      "iniciais": "GA"
+    },
+    {
+      "id": "2",
+      "nome": "Tahav Vihikwagh",
+      "data": "21/12/21",
+      "valor": 34000,
+      "tipo": "debito",
+      "iniciais": "TV"
+    },
+    {
+      "id": "3",
+      "nome": "Frank Jones",
+      "data": "21/12/21",
+      "valor": 52000,
+      "tipo": "credito",
+      "iniciais": "FJ"
+    }
+  ],
+  "relatorio": {
+    "mensal": [
+      { "mes": "Jan", "receita": 70, "despesa": 45 },
+      { "mes": "Fev", "receita": 80, "despesa": 75, "destaque": true},
+      { "mes": "Mar", "receita": 65, "despesa": 55 },
+      { "mes": "Abr", "receita": 60, "despesa": 80 },
+      { "mes": "Mai", "receita": 50, "despesa": 60 }
+    ]
+  },
+  "orcamento": {
+    "dinheiro": 100000,
+    "itens": [
+      { "id": "1", "descricao": "Assinaturas", "valor": 22000, "marcado": true, "automatico": true },
+      { "id": "2", "descricao": "Pagamento de Loan", "valor": 20000, "marcado": true, "automatico": true },
+      { "id": "3", "descricao": "Alimentação", "valor": 10000, "marcado": true, "automatico": false },
+      { "id": "4", "descricao": "Poupança", "valor": 2000, "marcado": false, "automatico": false },
+      { "id": "5", "descricao": "Combustível", "valor": 12000, "marcado": false, "automatico": false }
+    ]
+  },
+  "assinaturas": [
+    { "id": "1", "nome": "LinkedIn", "vencimento": "21/12/21", "valor": 20000, "cor": "#0a66c2" },
+    { "id": "2", "nome": "Netflix", "vencimento": "21/12/21", "valor": 5000, "cor": "#e50914" },
+    { "id": "3", "nome": "DSTV", "vencimento": "21/12/21", "valor": 2000, "cor": "#0079c1" }
+  ],
+  "poupanca": {
+    "meta": 500000,
+    "alcancado": 250000
+  },
+  "emprestimos": [
+    {
+      "id": "1",
+      "descricao": "Pagar taxa do irmão",
+      "valorTotal": 250000,
+      "valorRestante": 40000,
+      "dataTomada": "21/12/21",
+      "iniciais": "IR"
+    }
+  ],
+  "conselho": {
+    "texto": "Tente aproveitar a vida. Os problemas nunca acabam. É assim que é, rsrs...."
+  }
+}

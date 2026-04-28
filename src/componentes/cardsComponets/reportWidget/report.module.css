@@ -1,0 +1,84 @@
+
+:root {
+  --bg-trilha: #3e342b;
+  --bg-destaqueTrue: #ffcead;
+  --bg-destaqueFalse: #ff6d00;
+}
+
+
+.grafico {
+  display: flex;
+  gap: 1rem;
+  padding: 0.625rem 0;
+  max-height: 200px;
+}
+
+.eixoY {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 10rem;
+  padding-bottom: 1.375rem;
+}
+
+.rotuloY {
+  font-size: .75rem;
+  color: var(--text-secondary, #a19d98);
+  text-align: right;
+  min-width: 25px;
+}
+
+.faixaBarras {
+  display: flex;
+  flex: 1;
+  gap: .75rem;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.grupoMes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  flex: 1;
+}
+
+.trilha {
+  width: 2.5rem;
+  height: 10rem;
+  background: var(--bg-trilha);
+  border-radius: .75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.segmentoTopo {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: .70rem;
+  z-index: 1;
+}
+
+.segmentoBase {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #ff6d00;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.destaqueTrue {
+  background: var(--bg-destaqueTrue);
+}
+
+.destaqueFalse {
+  background: var(--bg-destaqueFalse);
+}
+
+.rotuloMes {
+  font-size: .70rem;
+  color: var(--text-secondary);
+}
