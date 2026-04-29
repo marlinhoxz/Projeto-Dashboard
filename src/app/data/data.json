@@ -51,9 +51,9 @@
     ]
   },
   "assinaturas": [
-    { "id": "1", "nome": "LinkedIn", "vencimento": "21/12/21", "valor": 20000, "cor": "#0a66c2" },
-    { "id": "2", "nome": "Netflix", "vencimento": "21/12/21", "valor": 5000, "cor": "#e50914" },
-    { "id": "3", "nome": "DSTV", "vencimento": "21/12/21", "valor": 2000, "cor": "#0079c1" }
+    { "id": "1", "nome": "LinkedIn", "vencimento": "21/12/21", "valor": 20000},
+    { "id": "2", "nome": "Netflix", "vencimento": "21/12/21", "valor": 5000},
+    { "id": "3", "nome": "DSTV", "vencimento": "21/12/21", "valor": 2000}
   ],
   "poupanca": {
     "meta": 500000,

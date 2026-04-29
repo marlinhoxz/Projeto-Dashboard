@@ -63,6 +63,7 @@
     font-family: var(--font-body);
     font-size: .85rem;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .debit {

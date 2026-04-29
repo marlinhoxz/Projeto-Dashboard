@@ -1,19 +1,19 @@
 .layout {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 18.75rem 1fr;
   min-height: 100vh;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 2rem;
   gap: 1.5rem;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 1.5rem;
-  align-items: start;
+  display: flex;
+  gap: 1rem;
 }
+
+
