@@ -21,6 +21,10 @@
     gap: 0.5rem;
 }
 
+.notificacoesArea {
+  position: relative;
+}
+
 .iconBtn {
   position: relative;
   display: flex;
@@ -36,6 +40,10 @@
     color: var(--accent);
 }
 
+.menuBtn {
+  display: none;
+}
+
 .pop {
     position: absolute;
     top: -3px;
@@ -46,4 +54,60 @@
     background: var(--accent);
     border: 1px solid var(--bg-base);
     font-size: 0;
+}
+
+.notificacoesCard {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  width: 220px;
+  padding: 0.85rem;
+  border-radius: 0.9rem;
+  background: #221f1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
+  z-index: 20;
+}
+
+.notificacoesTitulo {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.notificacoesVazio {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .menuBtn {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    padding: 0.75rem 0.25rem 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .pageTitle {
+    font-size: 1.05rem;
+  }
+
+  .action {
+    gap: 0.3rem;
+  }
+
+  .notificacoesCard {
+    width: 190px;
+    right: -0.25rem;
+    padding: 0.65rem;
+  }
 }

@@ -3,7 +3,14 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: var(--bg-sidebar);
+    transition: transform 0.25s ease;
+    z-index: 40;
     
+}
+
+.backdrop {
+    display: none;
 }
 
 .perfil {
@@ -101,6 +108,7 @@
     place-items: center;
     z-index: 10;
     padding: .13rem;
+    --webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
 }
 
@@ -135,4 +143,61 @@
     padding: .6rem 1rem;
     cursor: pointer;
     font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        border: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 35;
+    }
+
+    .backdropOpen {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: min(20rem, 90vw);
+        transform: translateX(-100%);
+        border-right: 1px solid var(--border-subtle);
+        transition: transform .3s ease;
+        z-index: 9;
+    }
+
+    .sidebarOpen {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100vw;
+    }
+
+    .perfil {
+        padding: 0.75rem;
+    }
+
+    .username {
+        font-size: 0.9rem;
+    }
+
+    .nav {
+        padding: 0.4rem;
+    }
+
+    .navItem {
+        font-size: 1rem;
+        padding: 0.6rem 0.1rem;
+    }
 }

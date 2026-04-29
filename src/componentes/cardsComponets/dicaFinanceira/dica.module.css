@@ -1,0 +1,28 @@
+.cardHeight {
+    height: 220px;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    grid-area: .688rem;
+}
+
+.conselho {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    padding: .25rem;
+}
+
+@media (max-width: 400px) {
+    .cardHeight {
+        height: auto;
+    }
+
+    .conselho {
+        font-size: 0.9rem;
+        line-height: 1.45;
+        padding: 0;
+    }
+}

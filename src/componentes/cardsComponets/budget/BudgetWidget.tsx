@@ -1,8 +1,8 @@
 import Widget from "@/componentes/widget/Widget";
 import styles from "./budget.module.css";
 import { orcamento } from "@/app/data/data.json";
-import { SquareCheckBig} from "lucide-react";
-
+import { SquareCheckBig } from "lucide-react";
+import { secureHeapUsed } from "crypto";
 
 type ItemOrcamento = {
   id: string;
@@ -31,7 +31,7 @@ export default function BudgetWidget({
   itens?: ItemOrcamento[];
 }) {
   return (
-    <Widget title="Orcamento">
+    <Widget title="Orcamento" className={styles.widgetExpandido}>
       <div className={styles.cashRow}>
         <h3 className={styles.cashLabel}>Caixa</h3>
         <p className={styles.cashAmount}>₦ {dinheiro}</p>
@@ -39,28 +39,31 @@ export default function BudgetWidget({
       <div>
         <ul className={styles.list} role="list">
           {itens.map((item) => (
-            <li key={item.id} className={styles.item}>
-              <label className={styles.checkLabel}>
-                
+            
+              <li key={item.id} className={styles.item}>
                 <span
                   className={`${styles.checkmark} ${item.marcado ? styles.checked : ""}`}
                 >
-                  {item.marcado? <SquareCheckBig size={90}/> : <input
-                  type="checkbox"
-                  className={styles.checkbox}
-                  defaultChecked={item.marcado}
-                  aria-label={item.descricao}
-                />}
+                  {item.marcado ? (
+                    <SquareCheckBig size={40} />
+                  ) : (
+                    <input
+                      type="checkbox"
+                      className={styles.checkbox}
+                      defaultChecked={item.marcado}
+                      aria-label={item.descricao}
+                    />
+                  )}
                 </span>
                 <div className={styles.itemInfo}>
                   <span className={styles.itemLabel}>{item.descricao}</span>
                   {item.automatico && (
-                    <span className={styles.aumatedBadge}>Automatico</span>
+                    <span className={styles.automatedBadge}>Automatico</span>
                   )}
                 </div>
-              </label>
-              <p className={styles.itemAmount}>₦ {item.valor}</p>
-            </li>
+                <p className={styles.itemAmount}>₦ {item.valor}</p>
+              </li>
+          
           ))}
         </ul>
       </div>

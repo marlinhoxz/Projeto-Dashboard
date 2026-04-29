@@ -1,11 +1,12 @@
 .widget {
-    background: var(--bg-card);
+    background: #2A231D;
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
     overflow: hidden;
     transition: border-color 0.2s ease;
+    padding: .688rem;
 }
 
 .widget:hover {
@@ -15,21 +16,20 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: center;
     justify-content: space-between;
-    padding: 18px 20px 0;
+    padding: 1.125rem .125rem 0;
 }
 
 .title {
     font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: var(--text-primary);
 }
 
 .addBtn {
-    width: 28px;
-    height: 28px;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
     border: 1px solid var(--border);
     display: flex;
@@ -46,10 +46,34 @@
 }
 
 .addBtn svg {
-    width: 14px;
-    height: 14px;
+    width: .875rem;
+    height: .875rem;
 }
 
 .body {
-    padding: 16px 20px 20px;
+    padding: 1rem 1.12rem 1.25rem;
+}
+
+@media (max-width: 400px) {
+    .widget {
+        border-radius: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    .header {
+        padding: 0.75rem 0.125rem 0;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .addBtn {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+
+    .body {
+        padding: 0.7rem 0.6rem 0.8rem;
+    }
 }

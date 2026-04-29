@@ -2,16 +2,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
+}
+
+.donutWrapper {
+  position: relative;
+  display: grid;
+  place-items: center;
 }
 
 .donut {
-  width: 7rem;
-  height: 7rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 11rem;
+  height: 11rem;
+}
+
+.progresso {
+  transform-origin: center;
+  transform: rotate(90deg);
+  transition: stroke-dashoffset 0.35s ease;
 }
 
 .donutCenter {
@@ -26,9 +34,13 @@
 }
 
 .rotuloPorcentagem {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
@@ -45,14 +57,44 @@
 }
 
 .rotuloEstatistica {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   font-family: var(--font-display);
 }
 
 .valorEstatistica {
-  font-size: 0.95rem;
-  font-weight: bold;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--text-primary);
   font-family: var(--font-display);
+}
+
+@media (max-width: 400px) {
+  .layout {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .donut {
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+
+  .rotuloPorcentagem {
+    font-size: 0.95rem;
+  }
+
+  .estatisticas {
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .rotuloEstatistica {
+    font-size: 0.7rem;
+  }
+
+  .valorEstatistica {
+    font-size: 0.9rem;
+  }
 }

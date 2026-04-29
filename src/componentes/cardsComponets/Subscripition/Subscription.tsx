@@ -24,7 +24,7 @@ export default function WidgetAssinatura({assinaturas = ASSINATURA_PADRAO,}:{
 }
 ) {
   return (
-    <Widget title="Assinaturas">
+    <Widget title="Assinaturas" className={styles.cardHeight}>
         <ul className={styles.list} role="list">
             {assinaturas.map(({id, nome, vencimento, valor}) => (
                 <li key={id} className={styles.item}>
@@ -36,6 +36,7 @@ export default function WidgetAssinatura({assinaturas = ASSINATURA_PADRAO,}:{
                         <time className={styles.vencimento} dateTime={vencimento}>vence em {vencimento}</time>
                     </div>
                     <p className={styles.valor}>₦ {valor}</p>
+        
                 </li>
             ))}
         </ul>

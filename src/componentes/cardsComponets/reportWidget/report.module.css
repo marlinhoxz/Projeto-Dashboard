@@ -6,6 +6,10 @@
 }
 
 
+.cardHeight {
+  height: 335px;
+}
+
 .grafico {
   display: flex;
   gap: 1rem;
@@ -17,15 +21,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 10rem;
+  height: 200px;
   padding-bottom: 1.375rem;
 }
 
 .rotuloY {
-  font-size: .75rem;
+  font-size: 1rem;
   color: var(--text-secondary, #a19d98);
   text-align: right;
-  min-width: 25px;
+  min-width: 30px;
 }
 
 .faixaBarras {
@@ -79,6 +83,32 @@
 }
 
 .rotuloMes {
-  font-size: .70rem;
+  font-size: 1rem;
   color: var(--text-secondary);
+}
+
+@media (max-width: 400px) {
+  .cardHeight {
+    height: auto;
+  }
+
+  .grafico {
+    gap: 0.55rem;
+    max-height: 165px;
+  }
+
+  .eixoY {
+    height: 165px;
+    padding-bottom: 1rem;
+  }
+
+  .rotuloY,
+  .rotuloMes {
+    font-size: 0.72rem;
+  }
+
+  .trilha {
+    width: 1.2rem;
+    height: 8rem;
+  }
 }
