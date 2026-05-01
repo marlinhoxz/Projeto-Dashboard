@@ -1,11 +1,11 @@
  'use client'
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import Widget from "@/componentes/widget/Widget";
 import styles from "./loans.module.css";
 import { emprestimos } from "@/app/data/data.json";
 import Image from "next/image";
+import Widget from "../widget/Widget";
 
 type Emprestimo = {
   id: string;
@@ -13,7 +13,6 @@ type Emprestimo = {
   valorTotal: number;
   valorRestante: number;
   dataTomada: string;
-  iniciais: string;
 };
 
 const EMPRESTIMOS_PADRAO = emprestimos.filter(
@@ -22,8 +21,7 @@ const EMPRESTIMOS_PADRAO = emprestimos.filter(
     typeof item.descricao === "string" &&
     typeof item.valorTotal === "number" &&
     typeof item.valorRestante === "number" &&
-    typeof item.dataTomada === "string" &&
-    typeof item.iniciais === "string",
+    typeof item.dataTomada === "string" 
 );
 
 export default function LoandsWdiget({
@@ -32,23 +30,40 @@ export default function LoandsWdiget({
   itens?: Emprestimo[];
 }) {
   const barrasRef = useRef<HTMLDivElement[]>([]);
+  const containerRef = useRef<HTMLUListElement>(null);
+  const [visual, setVisual] = useState(false);
 
   useEffect(() => {
-    if (!barrasRef.current.length) return;
+    const observer = new IntersectionObserver(
+      (entradas) => {
+        if (entradas[0].isIntersecting) setVisual(true);
+      },
+      { threshold: 0.3 }
+    );
+
+    const elemento = containerRef.current;
+    if (elemento) observer.observe(elemento);
+
+    return () => observer.disconnect();
+  }, []);
+
+
+  useEffect(() => {
+    if (!visual || !barrasRef.current.length) return;
 
     gsap.to(barrasRef.current, {
       width: (_, elemento) => elemento.dataset.targetWidth ?? "0%",
-      duration: 1,
+      duration: 1.5,
       ease: "power2.out",
       stagger: 0.1,
     });
-  }, []);
+  }, [visual]);
 
   barrasRef.current = [];
 
   return (
     <Widget title="Emprestimos" className={styles.cardHight}>
-      <ul className={styles.list} role="list">
+      <ul className={styles.list} ref={containerRef} role="list">
         {itens.map(
           ({
             id,
@@ -56,13 +71,12 @@ export default function LoandsWdiget({
             valorTotal,
             valorRestante,
             dataTomada,
-            iniciais,
           }) => {
             const percentualPago = Math.round(
               ((valorTotal - valorRestante) / valorTotal) * 100,
             );
             return (
-              <li key={id} className={styles.item}>
+              <li key={id} className={styles.item} >
                 <div className={styles.cabecalho}>
                   <div className={styles.avatar} aria-hidden="true">
                     <Image

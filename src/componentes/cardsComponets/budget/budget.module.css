@@ -46,7 +46,7 @@
     display: grid;
     grid-template-columns: 2rem 1fr auto;
     align-items: center;
-    gap: 0.5rem;
+    gap: .5rem;
     padding: .2rem;
     
 }
@@ -57,8 +57,8 @@
 
 
 .checkmark {
-    width: 2rem;
-    height: 2rem;
+    width: 32px;
+    height: 32px;
     border: 1.5px solid var(--text-muted);
     border-radius: .4rem;
     display: flex;
@@ -118,7 +118,7 @@
     }
 
     .cashRow {
-        margin-bottom: 0.75rem;
+        margin-bottom: .75rem;
     }
 
     .cashLabel,
@@ -129,7 +129,7 @@
     .list {
         height: auto;
         max-height: 250px;
-        gap: 0.55rem;
+        gap: .55rem;
     }
 
     .item {
@@ -138,16 +138,16 @@
 
     .checkmark,
     .checkmark svg {
-        width: 1.4rem;
-        height: 1.4rem;
+        width: 22px;
+        height: 22px;
     }
 
     .itemLabel {
-        font-size: 0.9rem;
+        font-size: .9rem;
     }
 
     .aumatedBadge,
     .itemAmount {
-        font-size: 0.8rem;
+        font-size: .8rem;
     }
 }

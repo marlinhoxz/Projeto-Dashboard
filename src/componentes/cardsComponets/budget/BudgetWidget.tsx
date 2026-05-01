@@ -1,8 +1,8 @@
-import Widget from "@/componentes/widget/Widget";
+
 import styles from "./budget.module.css";
 import { orcamento } from "@/app/data/data.json";
 import { SquareCheckBig } from "lucide-react";
-import { secureHeapUsed } from "crypto";
+import Widget from "../widget/Widget";
 
 type ItemOrcamento = {
   id: string;

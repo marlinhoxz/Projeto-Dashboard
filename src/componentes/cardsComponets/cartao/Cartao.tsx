@@ -1,6 +1,8 @@
-import { cartao as cartaoPadrao } from "@/app/data/data.json";
+import { cartao } from "@/app/data/data.json";
 import styles from "./cartao.module.css";
-import Widget from "../../widget/Widget";
+import Widget from "../widget/Widget";
+
+
 
 type Bandeira = "mastercard" | "visa";
 
@@ -11,7 +13,27 @@ type Cartao = {
   bandeira: Bandeira;
 };
 
-const CARTAO_PADRAO: Cartao = cartaoPadrao as Cartao;
+function isCartao(value: unknown ): value is Cartao {
+    if (typeof value !== 'object' || value === null) return false
+
+    return (
+      "saldo" in value &&
+      "ultimosQuatroDigitos" in value &&
+      "vencimento" in value &&
+      "bandeira" in value &&
+      typeof value.saldo === 'number' &&
+      typeof value.ultimosQuatroDigitos === 'string' &&
+      typeof value.vencimento === 'string' &&
+      (value.bandeira === 'mastercard' || value.bandeira === 'visa')
+    )
+  }
+  
+  const cartaoVerif: unknown = cartao
+  if(!isCartao(cartaoVerif)) {
+    throw new Error('data.json: cartão inválido')
+  }
+
+  const CARTAO_PADRAO = cartaoVerif
 
 export default function CardsWidget({
   cartao = CARTAO_PADRAO,

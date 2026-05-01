@@ -1,10 +1,9 @@
  "use client";
 
 import { useState } from "react";
-import Sidebar from "@/componentes/sidebar/Sidebar";
+import Sidebar from "@/componentes/cardsComponets/sidebar/Sidebar";
 import styles from "./page.module.css";
 import CardsWidget from "@/componentes/cardsComponets/cartao/Cartao";
-import TransactionWidget from "@/componentes/cardsComponets/transaction/Transaction";
 import Header from "@/componentes/cardsComponets/header/header";
 import WidgetRelatorio from "@/componentes/cardsComponets/reportWidget/Reportwidget";
 import BudgetWidget from "@/componentes/cardsComponets/budget/BudgetWidget";
@@ -12,6 +11,9 @@ import WidgetAssinatura from "@/componentes/cardsComponets/Subscripition/Subscri
 import WidgetEconomias from "@/componentes/cardsComponets/saving/SavingWidget";
 import LoandsWdiget from "@/componentes/cardsComponets/loans/LoansWidget";
 import WidgetConselho from "@/componentes/cardsComponets/dicaFinanceira/Dicafinance";
+import TransactionWidget from "@/componentes/cardsComponets/transaction/transaction";
+
+
 
 export default function Home() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);

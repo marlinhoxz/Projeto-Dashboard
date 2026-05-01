@@ -82,4 +82,4 @@ npm run dev
 
 - Atualmente, apenas a rota de inicio (`/`) esta implementada no menu lateral.
 - As demais secoes da sidebar exibem um modal de "Em desenvolvimento".
-- Os dados do painel sao mockados; para integrar com API, o ponto inicial recomendado e substituir o consumo do `dashboard.json` pelos endpoints reais.
+- Os dados do painel sao mockados; para integrar com API, o ponto inicial recomendado e substituir o consumo do `dashboard.json` pelos endpoints reais. OBS: Recomendo gerar a build do projeto e usar com npm start para melhor experiência.

@@ -23,8 +23,8 @@ export default function Header({
       setMenuNotificacoesAberto(false);
     }
 
-    document.addEventListener("mousedown", handleCliqueFora);
-    return () => document.removeEventListener("mousedown", handleCliqueFora);
+    document.addEventListener("click", handleCliqueFora);
+    return () => document.removeEventListener("click", handleCliqueFora);
   }, []);
 
   return (
@@ -63,7 +63,7 @@ export default function Header({
           {menuNotificacoesAberto && (
             <div className={styles.notificacoesCard} role="dialog" aria-label="Notificações">
               <p className={styles.notificacoesTitulo}>Notificações</p>
-              <p className={styles.notificacoesVazio}>Sem notificações no momento.</p>
+              <p className={styles.notificacoesVazio}>Seja Bem-vindo ao nosso Dashboard.</p>
             </div>
           )}
         </div>

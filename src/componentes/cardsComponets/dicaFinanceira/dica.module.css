@@ -5,7 +5,7 @@
 .conteudo {
     display: flex;
     flex-direction: column;
-    grid-area: .688rem;
+    grid-area: 11px;
 }
 
 .conselho {
@@ -21,7 +21,7 @@
     }
 
     .conselho {
-        font-size: 0.9rem;
+        font-size: .9rem;
         line-height: 1.45;
         padding: 0;
     }

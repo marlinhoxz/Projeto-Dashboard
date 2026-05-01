@@ -28,8 +28,8 @@
 }
 
 .addBtn {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: 1px solid var(--border);
     display: flex;
@@ -46,8 +46,8 @@
 }
 
 .addBtn svg {
-    width: .875rem;
-    height: .875rem;
+    width: 14px;
+    height: 14px;
 }
 
 .body {
@@ -56,12 +56,12 @@
 
 @media (max-width: 400px) {
     .widget {
-        border-radius: 0.75rem;
-        padding: 0.5rem;
+        border-radius: .75rem;
+        padding: .5rem;
     }
 
     .header {
-        padding: 0.75rem 0.125rem 0;
+        padding: .75rem .125rem 0;
     }
 
     .title {
@@ -69,11 +69,11 @@
     }
 
     .addBtn {
-        width: 1.9rem;
-        height: 1.9rem;
+        width: 30px;
+        height: 30px;
     }
 
     .body {
-        padding: 0.7rem 0.6rem 0.8rem;
+        padding: .7rem .6rem .8rem;
     }
 }

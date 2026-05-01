@@ -1,4 +1,5 @@
-import Widget from "@/componentes/widget/Widget";
+
+import Widget from "../widget/Widget";
 import styles from "./dica.module.css";
 import { conselho } from "@/app/data/data.json";
 

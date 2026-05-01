@@ -1,10 +1,10 @@
  'use client'
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import Widget from "@/componentes/widget/Widget";
 import { relatorio } from "@/app/data/data.json";
 import styles from "./report.module.css";
+import Widget from "../widget/Widget";
 
 type DadosMensais = {
   mes: string;
@@ -19,7 +19,8 @@ const ESCALA_Y = [100, 75, 50, 25, 0];
 export default function WidgetRelatorio() {
   const segmentosTopoRef = useRef<HTMLDivElement[]>([]);
   const segmentosBaseRef = useRef<HTMLDivElement[]>([]);
-
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [visual, setVisual] = useState(false)
   const maiorTotalMensal = meses.reduce(
     (acumulado, item) =>
       item.destaque ? acumulado : Math.max(acumulado, item.receita + item.despesa),
@@ -27,7 +28,20 @@ export default function WidgetRelatorio() {
   );
 
   useEffect(() => {
-    if (!segmentosTopoRef.current.length || !segmentosBaseRef.current.length) return;
+    const observer = new IntersectionObserver((entradas) => {
+      if (entradas[0].isIntersecting) setVisual(true)
+    }, {threshold: 0.3})
+
+    const elemento = containerRef.current
+    if(elemento) observer.observe(elemento)
+      return() => observer.disconnect()
+
+  }, [])
+
+
+
+  useEffect(() => {
+    if (!visual || !segmentosTopoRef.current.length || !segmentosBaseRef.current.length) return;
 
     gsap.to(segmentosTopoRef.current, {
       height: (_, elemento) => elemento.dataset.targetHeight ?? "0%",
@@ -38,19 +52,19 @@ export default function WidgetRelatorio() {
 
     gsap.to(segmentosBaseRef.current, {
       height: (_, elemento) => elemento.dataset.targetHeight ?? "0%",
-      duration: 1.2,
+      duration: 1.5,
       ease: "power2.out",
       stagger: 0.08,
       delay: 0.1,
     });
-  }, []);
+  }, [visual]);
 
   segmentosTopoRef.current = [];
   segmentosBaseRef.current = [];
 
   return (
     <Widget title="Report" className={styles.cardHeight}>
-      <div className={styles.grafico} aria-label="Receita e despesas mensais">
+      <div className={styles.grafico} ref={containerRef} aria-label="Receita e despesas mensais">
         <div className={styles.eixoY}>
           {ESCALA_Y.map((valor) => (
             <span key={valor} className={styles.rotuloY}>{valor}</span>

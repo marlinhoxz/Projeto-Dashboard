@@ -13,7 +13,7 @@
 .grafico {
   display: flex;
   gap: 1rem;
-  padding: 0.625rem 0;
+  padding: .625rem 0;
   max-height: 200px;
 }
 
@@ -93,7 +93,7 @@
   }
 
   .grafico {
-    gap: 0.55rem;
+    gap: .55rem;
     max-height: 165px;
   }
 
@@ -104,7 +104,7 @@
 
   .rotuloY,
   .rotuloMes {
-    font-size: 0.72rem;
+    font-size: .72rem;
   }
 
   .trilha {

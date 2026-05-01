@@ -1,5 +1,5 @@
 .sidebar {
-    width: 18.75rem;
+    width: 300px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -95,8 +95,8 @@
 }
 
 .navIcon {
-    width: 1.5rem;
-    height: 1.2rem;
+    width: 24px;
+    height: 24px;
     position: relative;
 }
 
@@ -106,7 +106,7 @@
     background: rgba(0, 0, 0, 0.55);
     display: grid;
     place-items: center;
-    z-index: 10;
+    z-index: 5;
     padding: .13rem;
     --webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
@@ -150,11 +150,11 @@
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, 0.5);
-        border: 0;
+        border: none;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.2s ease;
-        z-index: 35;
+        z-index: 20;
     }
 
     .backdropOpen {
@@ -171,7 +171,7 @@
         transform: translateX(-100%);
         border-right: 1px solid var(--border-subtle);
         transition: transform .3s ease;
-        z-index: 9;
+        z-index: 45;
     }
 
     .sidebarOpen {
@@ -185,19 +185,19 @@
     }
 
     .perfil {
-        padding: 0.75rem;
+        padding: .75rem;
     }
 
     .username {
-        font-size: 0.9rem;
+        font-size: .9rem;
     }
 
     .nav {
-        padding: 0.4rem;
+        padding: .4rem;
     }
 
     .navItem {
         font-size: 1rem;
-        padding: 0.6rem 0.1rem;
+        padding: .6rem .1rem;
     }
 }

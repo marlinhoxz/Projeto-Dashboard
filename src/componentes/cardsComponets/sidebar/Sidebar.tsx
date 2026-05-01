@@ -19,7 +19,12 @@ import Image from "next/image";
 import { useState } from "react";
 
 const NAV_ITEMS = [
-  { id: "inicio", href: "/", label: "Inicio", icon: House, implementada: true },
+  { id: "inicio",
+     href: "/", 
+     label: "Inicio", 
+     icon: House, 
+     implementada: true 
+  },
   {
     id: "orcamento",
     href: "/budget",
